@@ -7,11 +7,10 @@ import (
 
 // parseDate parses an RFC 2822 Date header value.
 //
-// This is a port of the grammar the Rust reference uses (the `time` crate's
-// Rfc2822 parser), not net/mail.ParseDate: the two disagree on two-digit
-// years, named and military zones, comments and leap seconds, and the archive
-// date must match the reference exactly. Its quirks are reproduced on purpose
-// (e.g. "-0030" is +00:30, "UT" is only recognised at the very end).
+// This is a dedicated grammar rather than net/mail.ParseDate, which handles
+// two-digit years, named and military zones, comments and leap seconds
+// differently. Its quirks are deliberate and pinned by tests (e.g. "-0030" is
+// +00:30, "UT" is only recognised at the very end).
 //
 // Returns nil for anything the grammar rejects. The result is truncated to
 // whole seconds in UTC.

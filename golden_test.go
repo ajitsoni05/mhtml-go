@@ -1,5 +1,4 @@
-// Golden acceptance suite: a faithful port of the Rust crate's golden suite
-// (itself a port of the reference parser's tests), plus the
+// Golden acceptance suite: the reference parser's tests, plus the
 // content-ID-to-URI conversion cases.
 //
 // Fidelity rules honoured here:

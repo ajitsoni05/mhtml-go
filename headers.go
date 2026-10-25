@@ -177,8 +177,7 @@ type contentType struct {
 // and trimmed values (one surrounding pair of double quotes stripped).
 // Segments without '=', and empty segments, are skipped.
 //
-// Unlike the header trims, these use strings.TrimSpace (Unicode White_Space),
-// matching the reference's str::trim.
+// Unlike the header trims, these use strings.TrimSpace (Unicode White_Space).
 func parseContentType(value string) contentType {
 	segments := strings.Split(value, ";")
 	ct := contentType{mimeType: stripASCIIWhitespace(segments[0])}
